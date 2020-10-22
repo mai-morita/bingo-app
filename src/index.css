@@ -25,4 +25,7 @@
   width: calc(5.5em + 12px);
 }
 
-/* ボタンをクリックしたときのもかく */
+.container {
+  text-align: center;
+  margin: 50px auto;
+}
