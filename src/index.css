@@ -1,0 +1,28 @@
+.PushButton {
+  background: #ffaa00;
+  border: 5px #ffcc00 solid;
+  color: #993300;
+  border-radius: calc(5em + 4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  text-shadow: 0 1px 2px #ffdd00;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.PushButton::after {
+  border: 1px #ffee00 dashed;
+  border-radius: 50em;
+  box-shadow: 0 0 2px 1px #ff9900, 0 2px 1px #ff9900 inset,
+    0 -4px 4px #ff9900 inset;
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  height: calc(5.5em + 12px);
+  width: calc(5.5em + 12px);
+}
+
+/* ボタンをクリックしたときのもかく */
