@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "../index.css";
 import Btn from "./Btn";
 
+const MAX_NUMBER = 75;
+
+const allNumbers = [...Array(MAX_NUMBER).keys()].map((i) => ++i);
+
 const randomCheck = () => {
-  let numbers = [...Array(75).keys()].map((i) => ++i);
+  let numbers = [...Array(MAX_NUMBER).keys()].map((i) => ++i);
   let numLen = numbers.length;
   while (numLen) {
     let randomNumber = Math.floor(Math.random() * numLen);
@@ -19,6 +23,7 @@ const App = () => {
   const [hitNum, setHitNum] = useState([]);
 
   const listItems = hitNum.map((number) => <li key={number}>{number}</li>);
+  const count = allNumbers.map((number) => <li key={number}>{number}</li>);
   return (
     <div className="container">
       <Btn
@@ -28,6 +33,7 @@ const App = () => {
         randomArray={randomArray}
       />
       <ul>{listItems}</ul>
+      <ul>{count}</ul>
     </div>
   );
 };
