@@ -24,6 +24,7 @@ const App = () => {
 
   const listItems = hitNum.map((number) => <li key={number}>{number}</li>);
   const count = allNumbers.map((number) => <li key={number}>{number}</li>);
+  const last = hitNum.slice(-1)[0];
   return (
     <div className="container">
       <Btn
@@ -32,8 +33,9 @@ const App = () => {
         setHitNum={setHitNum}
         randomArray={randomArray}
       />
+      <ul>{last}</ul>
       <ul>{listItems}</ul>
-      <ul>{count}</ul>
+      <ul className="stamp-card">{count}</ul>
     </div>
   );
 };
