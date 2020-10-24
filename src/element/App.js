@@ -48,7 +48,6 @@ const App = () => {
         setHitNum={setHitNum}
         randomArray={randomArray}
       />
-      <div>{listItems}</div>
       <div className="memorySpace">{count}</div>
     </div>
   );
