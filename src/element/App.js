@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../index.css";
-import Btn from "./Btn";
+import StopBtn from "./StopBtn";
 
 const MAX_NUMBER = 75;
 
@@ -39,10 +39,11 @@ const App = () => {
 
   const last =
     hitNum.slice(-1)[0] !== undefined && matchNum(hitNum.slice(-1)[0]);
+
   return (
     <div className="container">
       <div className="hit-number">{last}</div>
-      <Btn
+      <StopBtn
         setRandomArray={setRandomArray}
         hitNum={hitNum}
         setHitNum={setHitNum}
