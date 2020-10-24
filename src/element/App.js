@@ -27,9 +27,15 @@ const App = () => {
   const listItems = hitNum.map((number) => (
     <div key={number}>{matchNum(number)}</div>
   ));
-  const count = allNumbers.map((number) => (
-    <div key={number}>{matchNum(number)}</div>
-  ));
+
+  const count = allNumbers.map((number) => {
+    const isHit = hitNum.includes(number);
+    return (
+      <div className={isHit ? "memoryNum" : "stamp-card"} key={number}>
+        {matchNum(number)}
+      </div>
+    );
+  });
 
   const last =
     hitNum.slice(-1)[0] !== undefined && matchNum(hitNum.slice(-1)[0]);
@@ -43,7 +49,7 @@ const App = () => {
         randomArray={randomArray}
       />
       <div>{listItems}</div>
-      <div className="stamp-card">{count}</div>
+      <div className="memorySpace">{count}</div>
     </div>
   );
 };
