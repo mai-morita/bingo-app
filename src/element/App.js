@@ -22,20 +22,20 @@ const App = () => {
   const [randomArray, setRandomArray] = useState(randomCheck());
   const [hitNum, setHitNum] = useState([]);
 
-  const listItems = hitNum.map((number) => <li key={number}>{number}</li>);
-  const count = allNumbers.map((number) => <li key={number}>{number}</li>);
+  const listItems = hitNum.map((number) => <div key={number}>{number}</div>);
+  const count = allNumbers.map((number) => <div key={number}>{number}</div>);
   const last = hitNum.slice(-1)[0];
   return (
     <div className="container">
+      <div className="hit-number">{last}</div>
       <Btn
         setRandomArray={setRandomArray}
         hitNum={hitNum}
         setHitNum={setHitNum}
         randomArray={randomArray}
       />
-      <ul>{last}</ul>
-      <ul>{listItems}</ul>
-      <ul className="stamp-card">{count}</ul>
+      <div>{listItems}</div>
+      <div className="stamp-card">{count}</div>
     </div>
   );
 };
