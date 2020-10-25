@@ -16,3 +16,5 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // ボタンを押して(handleClick)、
 // そのシャッフルされた配列(randomArray)から数字をとって
 // 表示する配列(hitNum)に入れる
+
+//

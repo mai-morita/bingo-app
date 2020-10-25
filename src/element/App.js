@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../index.css";
 import StopBtn from "./StopBtn";
+import StartBtn from "./StartBtn";
 
 const MAX_NUMBER = 75;
-
 const allNumbers = [...Array(MAX_NUMBER).keys()].map((i) => ++i);
 
 const randomCheck = () => {
@@ -24,10 +24,6 @@ const App = () => {
   const [randomArray, setRandomArray] = useState(randomCheck());
   const [hitNum, setHitNum] = useState([]);
 
-  const listItems = hitNum.map((number) => (
-    <div key={number}>{matchNum(number)}</div>
-  ));
-
   const count = allNumbers.map((number) => {
     const isHit = hitNum.includes(number);
     return (
@@ -40,14 +36,22 @@ const App = () => {
   const last =
     hitNum.slice(-1)[0] !== undefined && matchNum(hitNum.slice(-1)[0]);
 
+  const [switchBtn, setSwitchBtn] = useState(false);
+  const [shuffleStorage, setShuffleStorage] = useState();
+
   return (
     <div className="container">
-      <div className="hit-number">{last}</div>
+      <div className="hit-number">{switchBtn ? shuffleStorage : last}</div>
+      <StartBtn
+        setSwitchBtn={setSwitchBtn}
+        setShuffleStorage={setShuffleStorage}
+      />
       <StopBtn
         setRandomArray={setRandomArray}
         hitNum={hitNum}
         setHitNum={setHitNum}
         randomArray={randomArray}
+        setSwitchBtn={setSwitchBtn}
       />
       <div className="memorySpace">{count}</div>
     </div>
