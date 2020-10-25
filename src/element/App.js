@@ -36,23 +36,27 @@ const App = () => {
   const last =
     hitNum.slice(-1)[0] !== undefined && matchNum(hitNum.slice(-1)[0]);
 
-  const [switchBtn, setSwitchBtn] = useState(false);
+  const [isShuffle, setIsShuffle] = useState(false);
   const [shuffleStorage, setShuffleStorage] = useState();
 
   return (
     <div className="container">
-      <div className="hit-number">{switchBtn ? shuffleStorage : last}</div>
-      <StartBtn
-        setSwitchBtn={setSwitchBtn}
-        setShuffleStorage={setShuffleStorage}
-      />
-      <StopBtn
-        setRandomArray={setRandomArray}
-        hitNum={hitNum}
-        setHitNum={setHitNum}
-        randomArray={randomArray}
-        setSwitchBtn={setSwitchBtn}
-      />
+      <div className="hit-number">{isShuffle ? shuffleStorage : last}</div>
+      {isShuffle ? (
+        <StopBtn
+          setRandomArray={setRandomArray}
+          hitNum={hitNum}
+          setHitNum={setHitNum}
+          randomArray={randomArray}
+          setIsShuffle={setIsShuffle}
+        />
+      ) : (
+        <StartBtn
+          matchNum={matchNum}
+          setIsShuffle={setIsShuffle}
+          setShuffleStorage={setShuffleStorage}
+        />
+      )}
       <div className="memorySpace">{count}</div>
     </div>
   );

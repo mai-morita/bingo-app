@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 
-const allNum = [11, 21, 35, 49, 56, 62, 75];
-const StartBtn = ({ setSwitchBtn, setShuffleStorage }) => {
+const allNum = [3, 4, 5, 16, 27, 38, 49, 50, 61, 72];
+
+const StartBtn = ({ matchNum, setIsShuffle, setShuffleStorage }) => {
   const [intervalId, setIntervalId] = useState(null);
   const handleClickStartBtn = () => {
     const view = () => {
       const arrayIndex = Math.floor(Math.random() * allNum.length);
-      setShuffleStorage(allNum[arrayIndex]);
+      setShuffleStorage(matchNum(allNum[arrayIndex]));
     };
     if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(null);
     }
     setIntervalId(setInterval(view, 50));
-    setSwitchBtn(true);
+    setIsShuffle(true);
   };
   return (
     <button className="PushButton" onClick={handleClickStartBtn}>

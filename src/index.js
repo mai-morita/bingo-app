@@ -17,4 +17,4 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // そのシャッフルされた配列(randomArray)から数字をとって
 // 表示する配列(hitNum)に入れる
 
-//
+//isShuffle

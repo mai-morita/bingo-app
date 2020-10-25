@@ -5,11 +5,11 @@ const StopBtn = ({
   setHitNum,
   setRandomArray,
   randomArray,
-  setSwitchBtn,
+  setIsShuffle,
 }) => {
   // useStateで作った数字を保存する関数を利用して数字を保存す
   const handleClickBtn = () => {
-    setSwitchBtn(false);
+    setIsShuffle(false);
     const num = randomArray.pop();
     // useStateで作った数字を保存する関数を利用して数字を保存する
     setRandomArray(randomArray);
