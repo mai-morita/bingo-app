@@ -1,39 +1,84 @@
-.container {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: black;
+  height: 130px;
   text-align: center;
-  margin: 50px auto;
+  max-width: 100%;
+}
+
+.logo {
+  max-width: 167px;
+  max-height: 27px;
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.tittle {
+  width: 435px;
+  height: 90px;
+  margin-top: 25px;
+}
+
+.main-wrapper {
+  background-color: rgb(172, 172, 172);
+  opacity: 90%;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  max-width: 450px;
+  padding-top: 30px;
 }
 
 .hit-number {
-  border: 5px #5e5e5e solid;
-  color: #5e5e5e;
-  width: 1.5em;
-  height: 1.5em;
-  margin: 0 auto 30px;
-  font-size: 150px;
+  background-color: #d4d4d4;
+  border: 5px black solid;
+  color: black;
+  width: 180px;
+  height: 180px;
+  font-size: 120px;
+  padding: 0 20px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  margin-left: 50px;
 }
 
 .PushButton {
-  background: #ffaa00;
-  border: 9px #ffcc00 solid;
-  color: #762323;
+  background: #2c2c2c;
+  border: 9px #cecece solid;
+  color: #ffffff;
   border-radius: calc(5em + 4px);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   height: 120px;
   width: 120px;
-  text-shadow: 0 1px 2px #ffdd00;
+  text-shadow: 0 1px 2px #303030;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   font-size: 20px;
   font-weight: bold;
 }
 
 .PushButton::after {
-  border: 1px #ffee00 dashed;
+  border: 1px #b6b5b5 dashed;
   border-radius: 50em;
-  box-shadow: 0 0 2px 1px #ff9900, 0 2px 1px #ff9900 inset,
-    0 -4px 4px #ff9900 inset;
+  box-shadow: 0 0 2px 1px #333333, 0 2px 1px #333333 inset,
+    0 -4px 4px #333333 inset;
   content: "";
   position: absolute;
   left: 1.5px;
@@ -43,7 +88,9 @@
 }
 
 .memorySpace {
-  margin: 30px auto 0;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 30px 0;
 }
 
 .stamp-card {
@@ -62,5 +109,10 @@
   margin: 10px;
   font-weight: bold;
   color: #ffffff;
-  background: #b80c0c;
+  background: #2c2c2c;
+}
+
+.footer {
+  background-color: black;
+  height: 50px;
 }

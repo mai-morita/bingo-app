@@ -6,9 +6,15 @@ const StopBtn = ({
   setRandomArray,
   randomArray,
   setIsShuffle,
+  musicStart,
+  musicStop,
 }) => {
   // useStateで作った数字を保存する関数を利用して数字を保存す
   const handleClickBtn = () => {
+    musicStart.pause(); //　停止
+    musicStart.currentTime = 0;
+
+    musicStop.play(); // 再生
     setIsShuffle(false);
     const num = randomArray.pop();
     // useStateで作った数字を保存する関数を利用して数字を保存する
