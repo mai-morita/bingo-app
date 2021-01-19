@@ -45,11 +45,11 @@ const App = () => {
   return (
     <div>
       <div className="header">
-        <img className="logo" src="logo-white.png" alt="description of image" />
+        <img className="logo" src="logo-white.png" alt="description of logo" />
         <img
           className="tittle"
           src="tittle-white.png"
-          alt="description of tittle image"
+          alt="description of tittle"
         />
       </div>
       <div className="main-wrapper">
